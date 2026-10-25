@@ -24,6 +24,12 @@ working_dir=os.path.dirname(os.path.abspath((__file__)))
 embedding = HuggingFaceEmbeddings()
 
 #load the llm model(openai/gpt-oss-20b) from Groq
+groq_api_key=(os.getenv("GROQ_API_KEY"))
+if not groq_api_key:
+    raise ValueError(
+        "GROQ_API_KEY is missing .And it to Streamlit Secretes"
+    )
+
 
 llm= ChatGroq(
     model="openai/gpt-oss-20b",
