@@ -9,7 +9,7 @@ from langchain_classic.chains import create_retrieval_chain
 from langchain_classic.chains.combine_documents import (create_stuff_documents_chain)
 from langchain_core.prompts import ChatPromptTemplate
 
-from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import UnstructuredPDFLoader,PyPDFLoader
 
 
 #Load the environment
@@ -40,7 +40,7 @@ llm= ChatGroq(
 # Document - Engiction
 
 def process_documents_to_chroma_db(file_name):
-    Loader=UnstructuredPDFLoader(f"{working_dir}/{file_name}")
+    Loader=PyPDFLoader(f"{working_dir}/{file_name}")
     documents=Loader.load()
     #splite the text into chunks for embeddingd
     text_splitters=RecursiveCharacterTextSplitter(
