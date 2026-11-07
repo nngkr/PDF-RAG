@@ -10,4 +10,4 @@ unstructured[pdf]
 langchain-unstructured
 langchain-chroma
 langchain-groq
-opencv-python
+opencv-python-headless
