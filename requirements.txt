@@ -11,3 +11,4 @@ langchain-unstructured
 langchain-chroma
 langchain-groq
 opencv-python-headless
+pypdf
